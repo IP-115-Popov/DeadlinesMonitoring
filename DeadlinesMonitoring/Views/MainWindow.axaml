@@ -1,0 +1,45 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:DeadlinesMonitoring.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="DeadlinesMonitoring.Views.MainWindow"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="DeadlinesMonitoring">
+
+    <Design.DataContext>
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+	<Window.Styles>
+		<StyleInclude Source="/Assets/MyCastomStyle.axaml"/>
+	</Window.Styles>
+	<Grid RowDefinitions="*, *, *, *, *, *">
+		<Grid Grid.Row="0" ColumnDefinitions="*, *, *, *, *, *">
+			<TextBlock Grid.Column="0" Text="ФИО"/>
+			<TextBlock Grid.Column="1" Text="Физика"/>
+			<TextBlock Grid.Column="2" Text="История"/>
+			<TextBlock Grid.Column="3" Text="Информатика"/>
+			<TextBlock Grid.Column="4" Text="Обществознание"/>
+			<TextBlock Grid.Column="5" Text="Средний бал"/>
+		</Grid>
+		<Grid Grid.Row="1" ColumnDefinitions="*, *, *, *, *, *">
+
+		</Grid>
+		<Grid Grid.Row="2" ColumnDefinitions="*, *, *, *, *, *">
+
+		</Grid>
+		<Grid Grid.Row="3" ColumnDefinitions="*, *, *, *, *, *">
+
+		</Grid>
+		<Grid Grid.Row="4" ColumnDefinitions="*, *">
+			<Button Grid.Column="0" Content="Добавить"/>
+			<Button Grid.Column="1" Content="Удалить"/>
+		</Grid>
+		<Grid Grid.Row="5" ColumnDefinitions="*, *">
+			<Button Grid.Column="0" Content="Сохранить"/>
+			<Button Grid.Column="1" Content="Загрузить"/>
+		</Grid>
+	</Grid>
+
+</Window>
