@@ -16,7 +16,7 @@
 		<DataTemplate DataType="{x:Type LocalM:Student}">
 			<Grid ColumnDefinitions="*,*,*,*,*,*">
 				<TextBlock Grid.Column="0" Text="{Binding TextFIOCS}"/>
-				<TextBlock Grid.Column="1" Text="{Binding TextPhysicsCS}"/>
+				<TextBlock Background="{Binding ColorPhysicsCS}" Grid.Column="1" Text="{Binding TextPhysicsCS}"/>
 				<TextBlock Grid.Column="2" Text="{Binding TextHistoryCS}"/>
 				<TextBlock Grid.Column="3" Text="{Binding TextComputerScienceCS}"/>
 				<TextBlock Grid.Column="4" Text="{Binding TextSocialScienceCS}"/>
