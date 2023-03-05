@@ -20,13 +20,4 @@
 		<Setter Property="Margin" Value="5"/>
 		<Setter Property="Background" Value="Green"/>
 	</Style>
-	<Style Selector="Red">
-		<Setter Property="Background" Value="Red"/>
-	</Style>
-	<Style Selector="Yellow">
-		<Setter Property="Background" Value="Yellow"/>
-	</Style>
-	<Style Selector="Green">
-		<Setter Property="Background" Value="Green"/>
-	</Style>
 </Styles>

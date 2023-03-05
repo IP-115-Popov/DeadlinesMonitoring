@@ -161,6 +161,6 @@ namespace DeadlinesMonitoring.ViewModels
             HistoryAverageCS = Convert.ToString((float)CS2 / (float)c);    
             ComputerScienceAverageCS = Convert.ToString((float)CS3 / (float)c);
             SocialScienceAverageCS = Convert.ToString((float)CS4 / (float)c);
-        }
+        }       
     }
 }
