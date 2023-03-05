@@ -17,13 +17,14 @@ namespace DeadlinesMonitoring.ViewModels
         public MainWindowViewModel()
         {
             studentsList = new ObservableCollection<Student>();
-            RemuveStudent = ReactiveCommand.Create(() => StudentsList.Add(new Student { 
+            RemuveStudent = ReactiveCommand.Create(() => StudentsList.Add(new Student
+            {
                 TextFIOCS = fIOCS,
                 TextPhysicsCS = physicsCS,
                 TextHistoryCS = historyCS,
-                TextComputerScienceCS = computerScienceCS,         
+                TextComputerScienceCS = computerScienceCS,
                 TextSocialScienceCS = socialScienceCS,
-                TextAverageCS = "1",
+                TextAverageCS = Convert.ToString(AverageStudentCS())
             }));
         }
         public ObservableCollection<Student> StudentsList
@@ -134,5 +135,11 @@ namespace DeadlinesMonitoring.ViewModels
         public event PropertyChangedEventHandler? PropertyChanged;
 
         public ReactiveCommand<Unit, Unit> RemuveStudent { get; }
+        private float AverageStudentCS()
+        {
+            float rez = 0;
+            rez = (float.Parse(physicsCS) + float.Parse(historyCS) + float.Parse(computerScienceCS) + float.Parse(socialScienceCS))/4.0f;
+            return rez;
+        }
     }
 }
