@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DeadlinesMonitoring.Models
 {
-    internal class Student
+    public class Student
     {
         public Student() { }
         public string TextFIOCS { get; set; }

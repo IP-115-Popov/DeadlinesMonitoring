@@ -1,7 +1,10 @@
+using DeadlinesMonitoring.Models;
 using ReactiveUI;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Reactive;
 using System.Text;
 using Tmds.DBus;
 
@@ -9,7 +12,22 @@ namespace DeadlinesMonitoring.ViewModels
 {
     public class MainWindowViewModel : ViewModelBase, INotifyPropertyChanged
     {
-
+        private Student student;
+        private ObservableCollection<Student> studentsList;
+        public MainWindowViewModel()
+        {
+            studentsList = new ObservableCollection<Student>();
+            RemuveStudent = ReactiveCommand.Create(() => StudentsList.Add(new Student { TextFIOCS = "1", TextAverageCS = "1", TextComputerScienceCS = "1", TextHistoryCS = "1", TextPhysicsCS = "1", TextSocialScienceCS = "1" }));
+        }
+        public ObservableCollection<Student> StudentsList
+        {
+            get { return studentsList; }
+            set 
+            { 
+                 studentsList = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(StudentsList)));
+            }
+        }
         public string physicsAverageCS;
         public string PhysicsAverageCS
         {
@@ -92,5 +110,7 @@ namespace DeadlinesMonitoring.ViewModels
             }
         }
         public event PropertyChangedEventHandler? PropertyChanged;
+
+        public ReactiveCommand<Unit, Unit> RemuveStudent { get; }
     }
 }
