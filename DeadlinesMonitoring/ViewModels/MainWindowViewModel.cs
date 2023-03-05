@@ -1,3 +1,4 @@
+using Avalonia.Media;
 using DeadlinesMonitoring.Models;
 using ReactiveUI;
 using System;
@@ -39,7 +40,22 @@ namespace DeadlinesMonitoring.ViewModels
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(StudentsList)));           
             }
         }
+
+
         public string physicsAverageCS = "0";
+        public string historyAverageCS = "0";
+        public string computerScienceAverageCS = "0";
+        public string socialScienceAverageCS = "0";
+
+        public string fIOCS = "ÔÈÎ";
+        public string physicsCS = "0";
+        public string historyCS = "0";
+        public string computerScienceCS = "0";
+        public string socialScienceCS = "0";
+        public SolidColorBrush? colorPhysicsAverageCS = new SolidColorBrush(Colors.Red);
+        public SolidColorBrush? colorHistoryAverageCS = new SolidColorBrush(Colors.Red);
+        public SolidColorBrush? colorComputerScienceAverageCS = new SolidColorBrush(Colors.Red);
+        public SolidColorBrush? colorSocialScienceAverageCS = new SolidColorBrush(Colors.Red);
         public string PhysicsAverageCS
         {
             get => physicsAverageCS;
@@ -47,10 +63,13 @@ namespace DeadlinesMonitoring.ViewModels
             {
                 physicsAverageCS = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(PhysicsAverageCS)));
-            }
-        }
 
-        public string historyAverageCS = "0";
+                if (float.Parse(physicsAverageCS) < 1) colorPhysicsAverageCS = new SolidColorBrush(Colors.Red);
+                else if (float.Parse(physicsAverageCS) == 1) colorPhysicsAverageCS = new SolidColorBrush(Colors.Yellow);
+                else colorPhysicsAverageCS = new SolidColorBrush(Colors.Green);
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ColorPhysicsAverageCS)));
+            }
+        }     
         public string HistoryAverageCS
         {
             get => historyAverageCS;
@@ -58,9 +77,13 @@ namespace DeadlinesMonitoring.ViewModels
             {
                 historyAverageCS = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(HistoryAverageCS)));
+
+                if (float.Parse(historyAverageCS) < 1) colorHistoryAverageCS = new SolidColorBrush(Colors.Red);
+                else if (float.Parse(historyAverageCS) == 1) colorHistoryAverageCS = new SolidColorBrush(Colors.Yellow);
+                else colorHistoryAverageCS = new SolidColorBrush(Colors.Green);
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ColorHistoryAverageCS)));
             }
-        }
-        public string computerScienceAverageCS = "0";
+        }      
         public string ComputerScienceAverageCS
         {
             get => computerScienceAverageCS;
@@ -68,10 +91,13 @@ namespace DeadlinesMonitoring.ViewModels
             {
                 computerScienceAverageCS = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ComputerScienceAverageCS)));
-            }
-        }
 
-        public string socialScienceAverageCS = "0";
+                if (float.Parse(computerScienceAverageCS) < 1) colorComputerScienceAverageCS = new SolidColorBrush(Colors.Red);
+                else if (float.Parse(computerScienceAverageCS) == 1) colorComputerScienceAverageCS = new SolidColorBrush(Colors.Yellow);
+                else colorComputerScienceAverageCS = new SolidColorBrush(Colors.Green);
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ColorComputerScienceAverageCS)));
+            }
+        }    
         public string SocialScienceAverageCS
         {
             get => socialScienceAverageCS;
@@ -79,11 +105,14 @@ namespace DeadlinesMonitoring.ViewModels
             {
                 socialScienceAverageCS = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(SocialScienceAverageCS)));
+
+                if (float.Parse(socialScienceAverageCS) < 1) colorSocialScienceAverageCS = new SolidColorBrush(Colors.Red);
+                else if (float.Parse(socialScienceAverageCS) == 1) colorSocialScienceAverageCS = new SolidColorBrush(Colors.Yellow);
+                else colorSocialScienceAverageCS = new SolidColorBrush(Colors.Green);
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ColorSocialScienceAverageCS)));
             }
         }
-
-
-        public string fIOCS = "ÔÈÎ";
+    
         public string FIOCS
         {
             get => fIOCS;
@@ -92,8 +121,7 @@ namespace DeadlinesMonitoring.ViewModels
                 fIOCS = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(FIOCS)));
             }
-        }
-        public string physicsCS = "0";
+        } 
         public string PhysicsCS
         {
             get => physicsCS;
@@ -103,17 +131,15 @@ namespace DeadlinesMonitoring.ViewModels
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(PhysicsCS)));
             }
         }
-        public string historyCS = "0";
         public string HistoryCS
         {
             get => historyCS;
             set
-                    {
-                        historyCS = value;
+            {
+                historyCS = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(HistoryCS)));
             }
         }
-        public string computerScienceCS = "0";
         public string ComputerScienceCS
                 {
             get => computerScienceCS;
@@ -123,7 +149,6 @@ namespace DeadlinesMonitoring.ViewModels
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ComputerScienceCS)));
             }
         }
-        public string socialScienceCS = "0";
         public string SocialScienceCS
                 {
             get => socialScienceCS;
@@ -133,6 +158,46 @@ namespace DeadlinesMonitoring.ViewModels
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(SocialScienceCS)));
             }
         }
+
+
+        
+        public SolidColorBrush? ColorPhysicsAverageCS
+        {
+            get => colorPhysicsAverageCS;
+            set
+            {
+                colorPhysicsAverageCS = value;
+                //PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ColorPhysicsAverageCS)));
+            }
+        }
+        public SolidColorBrush ColorHistoryAverageCS
+        {
+            get => colorHistoryAverageCS;
+            set
+            {
+                colorHistoryAverageCS = value;
+                //PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ColorHistoryAverageCS)));
+            }
+        }
+        public SolidColorBrush ColorComputerScienceAverageCS
+        {
+            get => colorComputerScienceAverageCS;
+            set
+            {
+                colorComputerScienceAverageCS = value;
+                //PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ColorComputerScienceAverageCS)));
+            }
+        }
+        public SolidColorBrush ColorSocialScienceAverageCS
+        {
+            get => colorSocialScienceAverageCS;
+            set
+            {
+                colorSocialScienceAverageCS = value;
+                //PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ColorSocialScienceAverageCS)));
+            }
+        }
+
 
 
         public event PropertyChangedEventHandler? PropertyChanged;
