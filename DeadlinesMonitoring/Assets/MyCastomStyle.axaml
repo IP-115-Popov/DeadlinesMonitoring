@@ -20,10 +20,13 @@
 		<Setter Property="Margin" Value="5"/>
 		<Setter Property="Background" Value="Green"/>
 	</Style>
-	<Style Selector="TextBlock.Red">
-		<Setter Property="HorizontalAlignment" Value="Stretch"/>
-		<Setter Property="VerticalAlignment" Value="Stretch"/>
-		<Setter Property="TextAlignment" Value="Center"/>
+	<Style Selector="Red">
 		<Setter Property="Background" Value="Red"/>
+	</Style>
+	<Style Selector="Yellow">
+		<Setter Property="Background" Value="Yellow"/>
+	</Style>
+	<Style Selector="Green">
+		<Setter Property="Background" Value="Green"/>
 	</Style>
 </Styles>
