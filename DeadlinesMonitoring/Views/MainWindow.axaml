@@ -17,10 +17,10 @@
 			<Grid ColumnDefinitions="*,*,*,*,*,*">
 				<TextBlock Grid.Column="0" Text="{Binding TextFIOCS}"/>
 				<TextBlock Background="{Binding ColorPhysicsCS}" Grid.Column="1" Text="{Binding TextPhysicsCS}"/>
-				<TextBlock Grid.Column="2" Text="{Binding TextHistoryCS}"/>
-				<TextBlock Grid.Column="3" Text="{Binding TextComputerScienceCS}"/>
-				<TextBlock Grid.Column="4" Text="{Binding TextSocialScienceCS}"/>
-				<TextBlock Grid.Column="5" Text="{Binding TextAverageCS}"/>
+				<TextBlock Background="{Binding ColorHistoryCS}" Grid.Column="2" Text="{Binding TextHistoryCS}"/>
+				<TextBlock Background="{Binding ColorComputerScienceCS}" Grid.Column="3" Text="{Binding TextComputerScienceCS}"/>
+				<TextBlock Background="{Binding ColorSocialScienceCS}" Grid.Column="4" Text="{Binding TextSocialScienceCS}"/>
+				<TextBlock Background="{Binding ColorAverageCS}" Grid.Column="5" Text="{Binding TextAverageCS}"/>
 			</Grid>
 		</DataTemplate>
 	</Window.DataTemplates>
