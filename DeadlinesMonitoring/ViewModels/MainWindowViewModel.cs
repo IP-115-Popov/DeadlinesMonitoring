@@ -28,7 +28,7 @@ namespace DeadlinesMonitoring.ViewModels
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(StudentsList)));
             }
         }
-        public string physicsAverageCS;
+        public string physicsAverageCS = "0";
         public string PhysicsAverageCS
         {
             get => physicsAverageCS;
@@ -39,7 +39,7 @@ namespace DeadlinesMonitoring.ViewModels
             }
         }
 
-        public string historyAverageCS;
+        public string historyAverageCS = "0";
         public string HistoryAverageCS
         {
             get => historyAverageCS;
@@ -49,7 +49,7 @@ namespace DeadlinesMonitoring.ViewModels
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(HistoryAverageCS)));
             }
         }
-        public string computerScienceAverageCS;
+        public string computerScienceAverageCS = "0";
         public string ComputerScienceAverageCS
         {
             get => computerScienceAverageCS;
@@ -59,7 +59,8 @@ namespace DeadlinesMonitoring.ViewModels
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ComputerScienceAverageCS)));
             }
         }
-        public string socialScienceAverageCS;
+
+        public string socialScienceAverageCS = "0";
         public string SocialScienceAverageCS
         {
             get => socialScienceAverageCS;
@@ -69,7 +70,19 @@ namespace DeadlinesMonitoring.ViewModels
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(SocialScienceAverageCS)));
             }
         }
-        public string physicsCS;
+
+
+        public string fIOCS = "ÔÈÎ";
+        public string FIOCS
+        {
+            get => fIOCS;
+            set
+            {
+                fIOCS = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(FIOCS)));
+            }
+        }
+        public string physicsCS = "0";
         public string PhysicsCS
         {
             get => physicsCS;
@@ -79,7 +92,7 @@ namespace DeadlinesMonitoring.ViewModels
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(PhysicsCS)));
             }
         }
-        public string historyCS;
+        public string historyCS = "0";
         public string HistoryCS
         {
             get => historyCS;
@@ -89,7 +102,7 @@ namespace DeadlinesMonitoring.ViewModels
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(HistoryCS)));
             }
         }
-        public string computerScienceCS;
+        public string computerScienceCS = "0";
         public string ComputerScienceCS
                 {
             get => computerScienceCS;
@@ -99,7 +112,7 @@ namespace DeadlinesMonitoring.ViewModels
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ComputerScienceCS)));
             }
         }
-        public string socialScienceCS;
+        public string socialScienceCS = "0";
         public string SocialScienceCS
                 {
             get => socialScienceCS;
@@ -109,6 +122,8 @@ namespace DeadlinesMonitoring.ViewModels
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(SocialScienceCS)));
             }
         }
+
+
         public event PropertyChangedEventHandler? PropertyChanged;
 
         public ReactiveCommand<Unit, Unit> RemuveStudent { get; }
