@@ -29,22 +29,22 @@
 	</Window.Styles>
 	<Grid RowDefinitions="0.15*, *, 0.12*, 0.1*, 0.2*, 0.2*">
 		<Grid Grid.Row="0" ColumnDefinitions="*, *, *, *, *, *">
-			<TextBlock Grid.Column="0" Text="ФИО"/>
-			<TextBlock Grid.Column="1" Text="Физика"/>
-			<TextBlock Grid.Column="2" Text="История"/>
-			<TextBlock Grid.Column="3" Text="Информатика"/>
-			<TextBlock Grid.Column="4" Text="Обществознание"/>
-			<TextBlock Grid.Column="5" Text="Средний бал"/>
+			<TextBlock Classes="menu" Grid.Column="0" Text="ФИО"/>
+			<TextBlock Classes="menu" Grid.Column="1" Text="Физика"/>
+			<TextBlock Classes="menu" Grid.Column="2" Text="История"/>
+			<TextBlock Classes="menu" Grid.Column="3" Text="Информатика"/>
+			<TextBlock Classes="menu" Grid.Column="4" Text="Обществознание"/>
+			<TextBlock Classes="menu" Grid.Column="5" Text="Средний бал"/>
 		</Grid>
 		<Grid Grid.Row="1">
 			<ListBox Name="studentList" Items="{Binding StudentsList}"/>
 		</Grid>
 		<Grid Grid.Row="2" ColumnDefinitions="*, *, *, *, *, *">
-			<TextBlock Grid.Column="0" Text="Все студенты"/>
-			<TextBlock Name="physicsAverageCS" Grid.Column="1" Text="{Binding PhysicsAverageCS}"/>
-			<TextBlock Name="historyAverageCS" Grid.Column="2" Text="{Binding HistoryAverageCS}"/>
-			<TextBlock Name="computerScienceAverageCS" Grid.Column="3" Text="{Binding ComputerScienceAverageCS}"/>
-			<TextBlock Name="socialScienceAverageCS" Grid.Column="4" Text="{Binding  SocialScienceAverageCS}"/> 
+			<TextBlock Classes="menu" Grid.Column="0" Text="Все студенты"/>
+			<TextBlock Classes="menu" Name="physicsAverageCS" Grid.Column="1" Text="{Binding PhysicsAverageCS}"/>
+			<TextBlock Classes="menu" Name="historyAverageCS" Grid.Column="2" Text="{Binding HistoryAverageCS}"/>
+			<TextBlock Classes="menu" Name="computerScienceAverageCS" Grid.Column="3" Text="{Binding ComputerScienceAverageCS}"/>
+			<TextBlock Classes="menu" Name="socialScienceAverageCS" Grid.Column="4" Text="{Binding  SocialScienceAverageCS}"/> 
 		</Grid>
 		<Grid Grid.Row="3" ColumnDefinitions="*, *, *, *, *, *">
 			<TextBox Name="fIOCS" Grid.Column="0" Text="{Binding FIOCS}"/>

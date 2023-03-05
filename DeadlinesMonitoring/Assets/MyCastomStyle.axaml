@@ -13,11 +13,17 @@
 		<Setter Property="VerticalContentAlignment" Value="Center"/>
 		<Setter Property="Margin" Value="5"/>
 	</Style>
-	<Style Selector="TextBlock">
+	<Style Selector="TextBlock.menu">
 		<Setter Property="HorizontalAlignment" Value="Stretch"/>
 		<Setter Property="VerticalAlignment" Value="Stretch"/>
 		<Setter Property="TextAlignment" Value="Center"/>
 		<Setter Property="Margin" Value="5"/>
 		<Setter Property="Background" Value="Green"/>
+	</Style>
+	<Style Selector="TextBlock.Red">
+		<Setter Property="HorizontalAlignment" Value="Stretch"/>
+		<Setter Property="VerticalAlignment" Value="Stretch"/>
+		<Setter Property="TextAlignment" Value="Center"/>
+		<Setter Property="Background" Value="Red"/>
 	</Style>
 </Styles>
