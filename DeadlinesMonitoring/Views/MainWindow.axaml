@@ -14,7 +14,7 @@
 	<Window.Styles>
 		<StyleInclude Source="/Assets/MyCastomStyle.axaml"/>
 	</Window.Styles>
-	<Grid RowDefinitions="*, *, *, *, *, *">
+	<Grid RowDefinitions="0.15*, *, 0.12*, 0.1*, 0.2*, 0.2*">
 		<Grid Grid.Row="0" ColumnDefinitions="*, *, *, *, *, *">
 			<TextBlock Grid.Column="0" Text="ФИО"/>
 			<TextBlock Grid.Column="1" Text="Физика"/>
@@ -34,7 +34,7 @@
 			<TextBlock Name="socialScienceAverageCS" Grid.Column="4" Text="0"/> 
 		</Grid>
 		<Grid Grid.Row="3" ColumnDefinitions="*, *, *, *, *, *">
-			<TextBlock Grid.Column="0" Text="Все студенты"/>
+			<TextBox Name="fIOCS" Grid.Column="0" Text="ФИО"/>
 			<TextBox Name="physicsCS" Grid.Column="1" Text="0"/>
 			<TextBox Name="historyCS" Grid.Column="2" Text="0"/>
 			<TextBox Name="computerScienceCS" Grid.Column="3" Text="0"/>
