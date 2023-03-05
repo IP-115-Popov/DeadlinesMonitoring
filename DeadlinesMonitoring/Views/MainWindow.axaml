@@ -44,7 +44,8 @@
 			<TextBlock Background="{Binding ColorPhysicsAverageCS}" Classes="menu" Name="physicsAverageCS" Grid.Column="1" Text="{Binding PhysicsAverageCS}"/>
 			<TextBlock Background="{Binding ColorHistoryAverageCS}" Classes="menu" Name="historyAverageCS" Grid.Column="2" Text="{Binding HistoryAverageCS}"/>
 			<TextBlock Background="{Binding ColorComputerScienceAverageCS}" Classes="menu" Name="computerScienceAverageCS" Grid.Column="3" Text="{Binding ComputerScienceAverageCS}"/>
-			<TextBlock Background="{Binding ColorSocialScienceAverageCS}" Classes="menu" Name="socialScienceAverageCS" Grid.Column="4" Text="{Binding  SocialScienceAverageCS}"/> 
+			<TextBlock Background="{Binding ColorSocialScienceAverageCS}" Classes="menu" Name="socialScienceAverageCS" Grid.Column="4" Text="{Binding  SocialScienceAverageCS}"/>
+			<TextBlock Background="{Binding ColorStudentsAverageCS}" Classes="menu" Name="StudentsAverageCS" Grid.Column="4" Text="{Binding  TextStudentsAverageCS}"/>
 		</Grid>
 		<Grid Grid.Row="3" ColumnDefinitions="*, *, *, *, *, *">
 			<TextBox Name="fIOCS" Grid.Column="0" Text="{Binding FIOCS}"/>

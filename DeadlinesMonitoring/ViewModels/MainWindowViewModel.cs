@@ -46,6 +46,7 @@ namespace DeadlinesMonitoring.ViewModels
         public string historyAverageCS = "0";
         public string computerScienceAverageCS = "0";
         public string socialScienceAverageCS = "0";
+        public string textstudentsAverageCS = "0";
 
         public string fIOCS = "ÔÈÎ";
         public string physicsCS = "0";
@@ -56,6 +57,7 @@ namespace DeadlinesMonitoring.ViewModels
         public SolidColorBrush? colorHistoryAverageCS = new SolidColorBrush(Colors.Red);
         public SolidColorBrush? colorComputerScienceAverageCS = new SolidColorBrush(Colors.Red);
         public SolidColorBrush? colorSocialScienceAverageCS = new SolidColorBrush(Colors.Red);
+        public SolidColorBrush? colorStudentsAverageCS = new SolidColorBrush(Colors.Red);
         public string PhysicsAverageCS
         {
             get => physicsAverageCS;
@@ -112,7 +114,21 @@ namespace DeadlinesMonitoring.ViewModels
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ColorSocialScienceAverageCS)));
             }
         }
-    
+        public string TextStudentsAverageCS
+        {
+            get => textstudentsAverageCS;
+            set
+            {
+                textstudentsAverageCS = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(TextStudentsAverageCS)));
+
+                if (float.Parse(textstudentsAverageCS) < 1) colorStudentsAverageCS = new SolidColorBrush(Colors.Red);
+                else if (float.Parse(textstudentsAverageCS) == 1) colorStudentsAverageCS = new SolidColorBrush(Colors.Yellow);
+                else colorStudentsAverageCS = new SolidColorBrush(Colors.Green);
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ColorStudentsAverageCS)));
+            }
+        }
+
         public string FIOCS
         {
             get => fIOCS;
@@ -197,6 +213,15 @@ namespace DeadlinesMonitoring.ViewModels
                 //PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ColorSocialScienceAverageCS)));
             }
         }
+        public SolidColorBrush ColorStudentsAverageCS
+        {
+            get => colorStudentsAverageCS;
+            set
+            {
+                colorStudentsAverageCS = value;
+                //PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ColorSocialScienceAverageCS)));
+            }
+        }
 
 
 
@@ -211,7 +236,7 @@ namespace DeadlinesMonitoring.ViewModels
         }
         public void AverageAllStudentsCS()
         {
-            int c = studentsList.Count(), CS1=0, CS2=0, CS3=0, CS4=0;
+            int c = studentsList.Count(), CS1=0, CS2=0, CS3=0, CS4=0, CS5=0;
             foreach (Student item in studentsList)
             {
                 if (item != null)
@@ -220,12 +245,14 @@ namespace DeadlinesMonitoring.ViewModels
                     CS2 += int.Parse(item.TextHistoryCS);
                     CS3 += int.Parse(item.TextComputerScienceCS);
                     CS4 += int.Parse(item.TextSocialScienceCS);
+                    //CS5 += int.Parse(item.TextAverageCS);
                 }
             }
             PhysicsAverageCS = Convert.ToString((float)CS1 / (float)c);
             HistoryAverageCS = Convert.ToString((float)CS2 / (float)c);    
             ComputerScienceAverageCS = Convert.ToString((float)CS3 / (float)c);
             SocialScienceAverageCS = Convert.ToString((float)CS4 / (float)c);
+            //TextStudentsAverageCS = Convert.ToString((float)CS5 / (float)c);
         }       
     }
 }
