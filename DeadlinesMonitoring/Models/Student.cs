@@ -9,7 +9,7 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace DeadlinesMonitoring.Models
 {
-    public class Student// : INotifyPropertyChanged
+    public class Student
     {
         public Student() {}
         public string TextFIOCS { get; set; }
