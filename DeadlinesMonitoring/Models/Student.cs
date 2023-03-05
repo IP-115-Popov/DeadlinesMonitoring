@@ -9,11 +9,11 @@ namespace DeadlinesMonitoring.Models
     internal class Student
     {
         public Student() { }
-        public string TextfIOCS { get; set; }
-        public string TextphysicsCS { get; set; }
-        public string TexthistoryCS { get; set; }
-        public string TextcomputerScienceCS { get; set; }
-        public string TextsocialScienceCS { get; set; }
+        public string TextFIOCS { get; set; }
+        public string TextPhysicsCS { get; set; }
+        public string TextHistoryCS { get; set; }
+        public string TextComputerScienceCS { get; set; }
+        public string TextSocialScienceCS { get; set; }
         public string TextAverageCS { get; set; }
     }
 }

@@ -8,11 +8,11 @@ namespace DeadlinesMonitoring.ViewModels
     {
 
         public string physicsAverageCS;
-        public string PhysicsAverageCS
-        {
-            get { }
-            set { }
-        }
+        //public string PhysicsAverageCS
+        //{
+        //    get { }
+        //    set { }
+        //}
 
         public string historyAverageCS;
         public string computerScienceAverageCS;

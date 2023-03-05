@@ -3,6 +3,7 @@
         xmlns:vm="using:DeadlinesMonitoring.ViewModels"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:LocalM="clr-namespace:DeadlinesMonitoring.Models"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="DeadlinesMonitoring.Views.MainWindow"
         Icon="/Assets/avalonia-logo.ico"
@@ -11,6 +12,18 @@
     <Design.DataContext>
         <vm:MainWindowViewModel/>
     </Design.DataContext>
+	<Window.DataTemplates>
+		<DataTemplate DataType="{x:Type LocalM:Student}">
+			<Grid ColumnDefinitions="*,*,*,*,*,*">
+				<TextBlock Grid.Column="0" Text="{Binding TextFIOCS}"/>
+				<TextBlock Grid.Column="1" Text="{Binding TextPhysicsCS}"/>
+				<TextBlock Grid.Column="2" Text="{Binding TextHistoryCS}"/>
+				<TextBlock Grid.Column="3" Text="{Binding TextComputerScienceCS}"/>
+				<TextBlock Grid.Column="4" Text="{Binding TextSocialScienceCS}"/>
+				<TextBlock Grid.Column="5" Text="{Binding TextAverageCS}"/>
+			</Grid>
+		</DataTemplate>
+	</Window.DataTemplates>
 	<Window.Styles>
 		<StyleInclude Source="/Assets/MyCastomStyle.axaml"/>
 	</Window.Styles>
@@ -23,8 +36,12 @@
 			<TextBlock Grid.Column="4" Text="Обществознание"/>
 			<TextBlock Grid.Column="5" Text="Средний бал"/>
 		</Grid>
-		<Grid Grid.Row="1" ColumnDefinitions="*, *, *, *, *, *">
-
+		<Grid Grid.Row="1">
+			<ListBox Name="studentList">
+				<ListBoxItem>
+					<LocalM:Student TextFIOCS ="Item1" TextPhysicsCS ="Item2" TextHistoryCS ="Item3" TextComputerScienceCS ="Item4" TextSocialScienceCS ="Item5" TextAverageCS ="Item6"/>
+				</ListBoxItem>
+			</ListBox>
 		</Grid>
 		<Grid Grid.Row="2" ColumnDefinitions="*, *, *, *, *, *">
 			<TextBlock Grid.Column="0" Text="Все студенты"/>
