@@ -15,12 +15,12 @@
 	<Window.DataTemplates>
 		<DataTemplate DataType="{x:Type LocalM:Student}">
 			<Grid ColumnDefinitions="*,*,*,*,*,*">
-				<TextBlock Grid.Column="0" Text="{Binding TextFIOCS}"/>
-				<TextBlock Background="{Binding ColorPhysicsCS}" Grid.Column="1" Text="{Binding TextPhysicsCS}"/>
-				<TextBlock Background="{Binding ColorHistoryCS}" Grid.Column="2" Text="{Binding TextHistoryCS}"/>
-				<TextBlock Background="{Binding ColorComputerScienceCS}" Grid.Column="3" Text="{Binding TextComputerScienceCS}"/>
-				<TextBlock Background="{Binding ColorSocialScienceCS}" Grid.Column="4" Text="{Binding TextSocialScienceCS}"/>
-				<TextBlock Background="{Binding ColorAverageCS}" Grid.Column="5" Text="{Binding TextAverageCS}"/>
+				<TextBlock Classes="zap" Grid.Column="0" Text="{Binding TextFIOCS}"/>
+				<TextBlock Classes="zap" Background="{Binding ColorPhysicsCS}" Grid.Column="1" Text="{Binding TextPhysicsCS}"/>
+				<TextBlock Classes="zap" Background="{Binding ColorHistoryCS}" Grid.Column="2" Text="{Binding TextHistoryCS}"/>
+				<TextBlock Classes="zap" Background="{Binding ColorComputerScienceCS}" Grid.Column="3" Text="{Binding TextComputerScienceCS}"/>
+				<TextBlock Classes="zap" Background="{Binding ColorSocialScienceCS}" Grid.Column="4" Text="{Binding TextSocialScienceCS}"/>
+				<TextBlock Classes="zap" Background="{Binding ColorAverageCS}" Grid.Column="5" Text="{Binding TextAverageCS}"/>
 			</Grid>
 		</DataTemplate>
 	</Window.DataTemplates>
@@ -44,8 +44,8 @@
 			<TextBlock Background="{Binding ColorPhysicsAverageCS}" Classes="menu" Name="physicsAverageCS" Grid.Column="1" Text="{Binding PhysicsAverageCS}"/>
 			<TextBlock Background="{Binding ColorHistoryAverageCS}" Classes="menu" Name="historyAverageCS" Grid.Column="2" Text="{Binding HistoryAverageCS}"/>
 			<TextBlock Background="{Binding ColorComputerScienceAverageCS}" Classes="menu" Name="computerScienceAverageCS" Grid.Column="3" Text="{Binding ComputerScienceAverageCS}"/>
-			<TextBlock Background="{Binding ColorSocialScienceAverageCS}" Classes="menu" Name="socialScienceAverageCS" Grid.Column="4" Text="{Binding  SocialScienceAverageCS}"/>
-			<TextBlock Background="{Binding ColorStudentsAverageCS}" Classes="menu" Name="StudentsAverageCS" Grid.Column="4" Text="{Binding  TextStudentsAverageCS}"/>
+			<TextBlock Background="{Binding ColorSocialScienceAverageCS}" Classes="menu" Name="socialScienceAverageCS" Grid.Column="4" Text="{Binding SocialScienceAverageCS}"/>
+			<TextBlock Background="{Binding ColorStudentsAverageCS}" Classes="menu" Name="StudentsAverageCS" Grid.Column="5" Text="{Binding TextStudentsAverageCS}"/>
 		</Grid>
 		<Grid Grid.Row="3" ColumnDefinitions="*, *, *, *, *, *">
 			<TextBox Name="fIOCS" Grid.Column="0" Text="{Binding FIOCS}"/>

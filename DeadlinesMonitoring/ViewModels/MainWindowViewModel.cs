@@ -142,8 +142,8 @@ namespace DeadlinesMonitoring.ViewModels
         {
             get => physicsCS;
             set
-                    {
-                        physicsCS = value;
+            {
+                physicsCS = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(PhysicsCS)));
             }
         }
@@ -236,23 +236,23 @@ namespace DeadlinesMonitoring.ViewModels
         }
         public void AverageAllStudentsCS()
         {
-            int c = studentsList.Count(), CS1=0, CS2=0, CS3=0, CS4=0, CS5=0;
+            float c = studentsList.Count(), CS1=0, CS2=0, CS3=0, CS4=0, CS5=0;
             foreach (Student item in studentsList)
             {
                 if (item != null)
                 {
-                    CS1 += int.Parse(item.TextPhysicsCS);
-                    CS2 += int.Parse(item.TextHistoryCS);
-                    CS3 += int.Parse(item.TextComputerScienceCS);
-                    CS4 += int.Parse(item.TextSocialScienceCS);
-                    //CS5 += int.Parse(item.TextAverageCS);
+                    CS1 += float.Parse(item.TextPhysicsCS);
+                    CS2 += float.Parse(item.TextHistoryCS);
+                    CS3 += float.Parse(item.TextComputerScienceCS);
+                    CS4 += float.Parse(item.TextSocialScienceCS);
+                    CS5 += float.Parse(item.TextAverageCS);
                 }
             }
             PhysicsAverageCS = Convert.ToString((float)CS1 / (float)c);
             HistoryAverageCS = Convert.ToString((float)CS2 / (float)c);    
             ComputerScienceAverageCS = Convert.ToString((float)CS3 / (float)c);
             SocialScienceAverageCS = Convert.ToString((float)CS4 / (float)c);
-            //TextStudentsAverageCS = Convert.ToString((float)CS5 / (float)c);
+            TextStudentsAverageCS = Convert.ToString((float)CS5 / (float)c);
         }       
     }
 }
