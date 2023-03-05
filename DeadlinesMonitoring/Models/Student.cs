@@ -8,7 +8,7 @@ namespace DeadlinesMonitoring.Models
 {
     public class Student
     {
-        public Student() { }
+        public Student() {}
         public string TextFIOCS { get; set; }
         public string TextPhysicsCS { get; set; }
         public string TextHistoryCS { get; set; }

@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Linq;
 using System.Reactive;
 using System.Text;
 using Tmds.DBus;
@@ -12,28 +13,30 @@ namespace DeadlinesMonitoring.ViewModels
 {
     public class MainWindowViewModel : ViewModelBase, INotifyPropertyChanged
     {
-        private Student student;
         private ObservableCollection<Student> studentsList;
         public MainWindowViewModel()
         {
             studentsList = new ObservableCollection<Student>();
-            RemuveStudent = ReactiveCommand.Create(() => StudentsList.Add(new Student
-            {
-                TextFIOCS = fIOCS,
-                TextPhysicsCS = physicsCS,
-                TextHistoryCS = historyCS,
-                TextComputerScienceCS = computerScienceCS,
-                TextSocialScienceCS = socialScienceCS,
-                TextAverageCS = Convert.ToString(AverageStudentCS())
-            }));
+            RemuveStudent = ReactiveCommand.Create(() => {
+                StudentsList.Add(new Student
+                {
+                    TextFIOCS = fIOCS,
+                    TextPhysicsCS = physicsCS,
+                    TextHistoryCS = historyCS,
+                    TextComputerScienceCS = computerScienceCS,
+                    TextSocialScienceCS = socialScienceCS,
+                    TextAverageCS = Convert.ToString(AverageStudentCS())
+                });
+                AverageAllStudentsCS();
+            });
         }
         public ObservableCollection<Student> StudentsList
         {
             get { return studentsList; }
             set 
             { 
-                 studentsList = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(StudentsList)));
+                studentsList = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(StudentsList)));           
             }
         }
         public string physicsAverageCS = "0";
@@ -140,6 +143,24 @@ namespace DeadlinesMonitoring.ViewModels
             float rez = 0;
             rez = (float.Parse(physicsCS) + float.Parse(historyCS) + float.Parse(computerScienceCS) + float.Parse(socialScienceCS))/4.0f;
             return rez;
+        }
+        public void AverageAllStudentsCS()
+        {
+            int c = studentsList.Count(), CS1=0, CS2=0, CS3=0, CS4=0;
+            foreach (Student item in studentsList)
+            {
+                if (item != null)
+                {
+                    CS1 += int.Parse(item.TextPhysicsCS);
+                    CS2 += int.Parse(item.TextHistoryCS);
+                    CS3 += int.Parse(item.TextComputerScienceCS);
+                    CS4 += int.Parse(item.TextSocialScienceCS);
+                }
+            }
+            PhysicsAverageCS = Convert.ToString((float)CS1 / (float)c);
+            HistoryAverageCS = Convert.ToString((float)CS2 / (float)c);    
+            ComputerScienceAverageCS = Convert.ToString((float)CS3 / (float)c);
+            SocialScienceAverageCS = Convert.ToString((float)CS4 / (float)c);
         }
     }
 }
