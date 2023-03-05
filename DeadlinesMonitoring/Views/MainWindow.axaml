@@ -27,10 +27,18 @@
 
 		</Grid>
 		<Grid Grid.Row="2" ColumnDefinitions="*, *, *, *, *, *">
-
+			<TextBlock Grid.Column="0" Text="Все студенты"/>
+			<TextBlock Name="physicsAverageCS" Grid.Column="1" Text="0"/>
+			<TextBlock Name="historyAverageCS" Grid.Column="2" Text="0"/>
+			<TextBlock Name="computerScienceAverageCS" Grid.Column="3" Text="0"/>
+			<TextBlock Name="socialScienceAverageCS" Grid.Column="4" Text="0"/> 
 		</Grid>
 		<Grid Grid.Row="3" ColumnDefinitions="*, *, *, *, *, *">
-
+			<TextBlock Grid.Column="0" Text="Все студенты"/>
+			<TextBox Name="physicsCS" Grid.Column="1" Text="0"/>
+			<TextBox Name="historyCS" Grid.Column="2" Text="0"/>
+			<TextBox Name="computerScienceCS" Grid.Column="3" Text="0"/>
+			<TextBox Name="socialScienceCS" Grid.Column="4" Text="0"/>
 		</Grid>
 		<Grid Grid.Row="4" ColumnDefinitions="*, *">
 			<Button Grid.Column="0" Content="Добавить"/>

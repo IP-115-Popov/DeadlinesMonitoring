@@ -8,7 +8,6 @@
     <BuiltInComInteropSupport>true</BuiltInComInteropSupport>
   </PropertyGroup>
   <ItemGroup>
-    <Folder Include="Models\" />
     <AvaloniaResource Include="Assets\**" />
     <AvaloniaResource Remove="Assets\MyCastomStyle.axaml" />
     <None Remove=".gitignore" />
