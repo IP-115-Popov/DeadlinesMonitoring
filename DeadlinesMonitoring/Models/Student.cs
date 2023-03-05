@@ -88,9 +88,8 @@ namespace DeadlinesMonitoring.Models
             get
             {
                 if (float.Parse(TextAverageCS) < 1) return new SolidColorBrush(Colors.Red);
-                else if (float.Parse(TextAverageCS) == 1) return new SolidColorBrush(Colors.Yellow);
-                else if (float.Parse(TextAverageCS) >= 1) return new SolidColorBrush(Colors.Green);
-                return null;
+                else if (float.Parse(TextAverageCS) <= 1.5) return new SolidColorBrush(Colors.Yellow);
+                else return new SolidColorBrush(Colors.Green);
             }
             set
             {

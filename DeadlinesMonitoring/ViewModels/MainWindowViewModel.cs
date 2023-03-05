@@ -123,7 +123,7 @@ namespace DeadlinesMonitoring.ViewModels
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(TextStudentsAverageCS)));
 
                 if (float.Parse(textstudentsAverageCS) < 1) colorStudentsAverageCS = new SolidColorBrush(Colors.Red);
-                else if (float.Parse(textstudentsAverageCS) == 1) colorStudentsAverageCS = new SolidColorBrush(Colors.Yellow);
+                else if (float.Parse(textstudentsAverageCS) <= 1.5) colorStudentsAverageCS = new SolidColorBrush(Colors.Yellow);
                 else colorStudentsAverageCS = new SolidColorBrush(Colors.Green);
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ColorStudentsAverageCS)));
             }
