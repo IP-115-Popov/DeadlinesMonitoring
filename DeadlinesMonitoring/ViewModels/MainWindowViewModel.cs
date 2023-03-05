@@ -17,7 +17,14 @@ namespace DeadlinesMonitoring.ViewModels
         public MainWindowViewModel()
         {
             studentsList = new ObservableCollection<Student>();
-            RemuveStudent = ReactiveCommand.Create(() => StudentsList.Add(new Student { TextFIOCS = "1", TextAverageCS = "1", TextComputerScienceCS = "1", TextHistoryCS = "1", TextPhysicsCS = "1", TextSocialScienceCS = "1" }));
+            RemuveStudent = ReactiveCommand.Create(() => StudentsList.Add(new Student { 
+                TextFIOCS = fIOCS,
+                TextPhysicsCS = physicsCS,
+                TextHistoryCS = historyCS,
+                TextComputerScienceCS = computerScienceCS,         
+                TextSocialScienceCS = socialScienceCS,
+                TextAverageCS = "1",
+            }));
         }
         public ObservableCollection<Student> StudentsList
         {
