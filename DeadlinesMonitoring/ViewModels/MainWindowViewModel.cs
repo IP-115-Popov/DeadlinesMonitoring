@@ -1,5 +1,6 @@
 using Avalonia.Media;
 using DeadlinesMonitoring.Models;
+using DynamicData;
 using ReactiveUI;
 using System;
 using System.Collections.Generic;
@@ -18,7 +19,7 @@ namespace DeadlinesMonitoring.ViewModels
         public MainWindowViewModel()
         {
             studentsList = new ObservableCollection<Student>();
-            RemuveStudent = ReactiveCommand.Create(() => {
+            AddStudent = ReactiveCommand.Create(() => {
                 StudentsList.Add(new Student
                 {
                     TextFIOCS = fIOCS,
@@ -29,6 +30,13 @@ namespace DeadlinesMonitoring.ViewModels
                     TextAverageCS = Convert.ToString(AverageStudentCS())
                 });
                 AverageAllStudentsCS();
+            });
+            RemuveStudent = ReactiveCommand.Create(() => {
+                if (StudentsList.Count > 0)
+                {
+                    StudentsList.RemoveAt(StudentsList.Count - 1);
+                    AverageAllStudentsCS();
+                }
             });
         }
         public ObservableCollection<Student> StudentsList
@@ -228,6 +236,7 @@ namespace DeadlinesMonitoring.ViewModels
         public event PropertyChangedEventHandler? PropertyChanged;
 
         public ReactiveCommand<Unit, Unit> RemuveStudent { get; }
+        public ReactiveCommand<Unit, Unit> AddStudent { get; }
         private float AverageStudentCS()
         {
             float rez = 0;

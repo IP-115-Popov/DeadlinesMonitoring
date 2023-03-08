@@ -55,8 +55,8 @@
 			<TextBox Name="socialScienceCS" Grid.Column="4" Text="{Binding SocialScienceCS}"/>
 		</Grid>
 		<Grid Grid.Row="4" ColumnDefinitions="*, *">
-			<Button Grid.Column="0" Content="Добавить" Command="{Binding RemuveStudent}"/>
-			<Button Grid.Column="1" Content="Удалить"/>
+			<Button Grid.Column="0" Content="Добавить" Command="{Binding AddStudent}"/>
+			<Button Grid.Column="1" Content="Удалить" Command="{Binding RemuveStudent}"/>
 		</Grid>
 		<Grid Grid.Row="5" ColumnDefinitions="*, *">
 			<Button Grid.Column="0" Content="Сохранить"/>
