@@ -8,8 +8,7 @@
         x:Class="DeadlinesMonitoring.Views.MainWindow"
         Icon="/Assets/avalonia-logo.ico"
         Title="DeadlinesMonitoring">
-
-    <Design.DataContext>
+	<Design.DataContext>
         <vm:MainWindowViewModel/>
     </Design.DataContext>
 	<Window.DataTemplates>
@@ -37,7 +36,7 @@
 			<TextBlock Classes="menu" Grid.Column="5" Text="Средний бал"/>
 		</Grid>
 		<Grid Grid.Row="1">
-			<ListBox Name="studentList" Items="{Binding StudentsList}"/>
+			<ListBox SelectedItem="{Binding SelectedItem}" Name="studentList" Items="{Binding StudentsList}"/>
 		</Grid>
 		<Grid Grid.Row="2" ColumnDefinitions="*, *, *, *, *, *">
 			<TextBlock Classes="menu" Grid.Column="0" Text="Все студенты"/>
@@ -59,8 +58,8 @@
 			<Button Grid.Column="1" Content="Удалить" Command="{Binding RemuveStudent}"/>
 		</Grid>
 		<Grid Grid.Row="5" ColumnDefinitions="*, *">
-			<Button Grid.Column="0" Content="Сохранить"/>
-			<Button Grid.Column="1" Content="Загрузить"/>
+			<Button Grid.Column="0" Content="Сохранить" Command="{Binding SaveList}"/>
+			<Button Grid.Column="1" Content="Загрузить" Command="{Binding LoadList}"/>
 		</Grid>
 	</Grid>
 

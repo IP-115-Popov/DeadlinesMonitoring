@@ -10,11 +10,12 @@ using System.Linq;
 using System.Reactive;
 using System.Text;
 using Tmds.DBus;
+using DeadlinesMonitoring.Views;
 
 namespace DeadlinesMonitoring.ViewModels
 {
     public class MainWindowViewModel : ViewModelBase, INotifyPropertyChanged
-    {
+    { 
         private ObservableCollection<Student> studentsList;
         public MainWindowViewModel()
         {
@@ -34,7 +35,7 @@ namespace DeadlinesMonitoring.ViewModels
             RemuveStudent = ReactiveCommand.Create(() => {
                 if (StudentsList.Count > 0)
                 {
-                    StudentsList.RemoveAt(StudentsList.Count - 1);
+                    StudentsList.Remove(SelectedItem);
                     AverageAllStudentsCS();
                 }
             });
@@ -231,12 +232,28 @@ namespace DeadlinesMonitoring.ViewModels
             }
         }
 
-
+        public Student selectedItem;
+        public Student SelectedItem
+        {
+            get => selectedItem;
+            set => this.RaiseAndSetIfChanged(ref selectedItem, value);
+        }
 
         public event PropertyChangedEventHandler? PropertyChanged;
 
         public ReactiveCommand<Unit, Unit> RemuveStudent { get; }
         public ReactiveCommand<Unit, Unit> AddStudent { get; }
+        public void SaveList()
+        {
+            if (studentsList.Count > 0)
+            {
+                
+            }
+        }
+        public void LoadList()
+        {
+
+        }
         private float AverageStudentCS()
         {
             float rez = 0;
