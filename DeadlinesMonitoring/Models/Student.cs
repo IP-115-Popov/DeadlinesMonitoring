@@ -5,18 +5,26 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 using static System.Net.Mime.MediaTypeNames;
 
 namespace DeadlinesMonitoring.Models
 {
+    [Serializable]
     public class Student
     {
         public Student() {}
+        //[XmlElement("TextFIOCS")]
         public string TextFIOCS { get; set; }
+        //[XmlElement("TextPhysicsCS")]
         public string TextPhysicsCS { get; set; }
+        //[XmlElement("TextHistoryCS")]
         public string TextHistoryCS { get; set; }
+        //[XmlElement("TextComputerScienceCS")]
         public string TextComputerScienceCS { get; set; }
+        //[XmlElement("TextSocialScienceCS")]
         public string TextSocialScienceCS { get; set; }
+        //[XmlElement("TextAverageCS")]
         public string TextAverageCS { get; set; }
 
         public SolidColorBrush? colorPhysicsCS = null;

@@ -11,11 +11,17 @@ using System.Reactive;
 using System.Text;
 using Tmds.DBus;
 using DeadlinesMonitoring.Views;
+using System.Data.Entity;
+using System.Xml.Serialization;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.Runtime.Serialization;
 
 namespace DeadlinesMonitoring.ViewModels
 {
     public class MainWindowViewModel : ViewModelBase, INotifyPropertyChanged
-    { 
+    {
+        [XmlArray("studentsList"), XmlArrayItem("Student")]
         private ObservableCollection<Student> studentsList;
         public MainWindowViewModel()
         {
@@ -243,16 +249,58 @@ namespace DeadlinesMonitoring.ViewModels
 
         public ReactiveCommand<Unit, Unit> RemuveStudent { get; }
         public ReactiveCommand<Unit, Unit> AddStudent { get; }
+
+        BinaryFormatter binFormatter = new BinaryFormatter();
         public void SaveList()
         {
             if (studentsList.Count > 0)
             {
+                List<StudentSave> studentSave = new List<StudentSave>();
+                foreach(Student i in studentsList)
+                {
+                    StudentSave buff = new StudentSave(
+                        i.TextFIOCS, 
+                        i.TextPhysicsCS, 
+                        i.TextHistoryCS,
+                        i.TextComputerScienceCS,
+                        i.TextSocialScienceCS,
+                        i.TextAverageCS
+                        );
+                    studentSave.Add(buff);
+                }
+
+                // XmlSerializer xmlSerializer = new XmlSerializer(typeof(MainWindowViewModel));
+                // StringWriter stringWriter = new StringWriter();
+                // xmlSerializer.Serialize(stringWriter, studentsList);
+                using (var file = new FileStream("list.bin", FileMode.OpenOrCreate))
+                {
+                    binFormatter.Serialize(file, studentSave);
+                }
                 
             }
         }
         public void LoadList()
         {
-
+            using (var file = new FileStream("list.bin", FileMode.OpenOrCreate))
+            {
+                List<StudentSave> newGroups = binFormatter.Deserialize(file) as List<StudentSave>;
+                if (newGroups.Count > 0)
+                {
+                    foreach (StudentSave i in newGroups)
+                    {
+                        StudentsList.Add(new Student
+                        {
+                            TextFIOCS = i.TextFIOCS,
+                            TextPhysicsCS = i.TextPhysicsCS,
+                            TextHistoryCS = i.TextHistoryCS,
+                            TextComputerScienceCS = i.TextComputerScienceCS,
+                            TextSocialScienceCS = i.TextSocialScienceCS,
+                            TextAverageCS = Convert.ToString(AverageStudentCS())
+                        });
+                        AverageAllStudentsCS();
+                    }
+                }
+            }
         }
         private float AverageStudentCS()
         {
