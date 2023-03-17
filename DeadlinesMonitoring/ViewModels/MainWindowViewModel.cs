@@ -281,6 +281,7 @@ namespace DeadlinesMonitoring.ViewModels
         }
         public void LoadList()
         {
+            StudentsList.Clear();
             using (var file = new FileStream("list.bin", FileMode.OpenOrCreate))
             {
                 List<StudentSave> newGroups = binFormatter.Deserialize(file) as List<StudentSave>;
