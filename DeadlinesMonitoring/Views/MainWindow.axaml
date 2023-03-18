@@ -14,7 +14,7 @@
 	<Window.DataTemplates>
 		<DataTemplate DataType="{x:Type LocalM:Student}">
 			<Grid ColumnDefinitions="*,*,*,*,*,*">
-				<TextBlock Classes="zap" Grid.Column="0" Text="{Binding TextFIOCS}"/>
+				<TextBlock Name="itemFIO" Classes="zap" Grid.Column="0" Text="{Binding TextFIOCS}"/>
 				<TextBlock Classes="zap" Background="{Binding ColorPhysicsCS}" Grid.Column="1" Text="{Binding TextPhysicsCS}"/>
 				<TextBlock Classes="zap" Background="{Binding ColorHistoryCS}" Grid.Column="2" Text="{Binding TextHistoryCS}"/>
 				<TextBlock Classes="zap" Background="{Binding ColorComputerScienceCS}" Grid.Column="3" Text="{Binding TextComputerScienceCS}"/>
