@@ -3,10 +3,10 @@ using System.Reflection;
 using Xunit.Abstractions;
 using Xunit.Sdk;
 
-[assembly: TestFramework("UITestsForRomanNumbersCalculator.AvaloniaUiTestFramework", "UITestsForRomanNumbersCalculator")]
+[assembly: TestFramework("UITestsForDeadlinesMonitoring.AvaloniaUiTestFramework", "UITestsForDeadlinesMonitoring")]
 [assembly: CollectionBehavior(CollectionBehavior.CollectionPerAssembly, DisableTestParallelization = false, MaxParallelThreads = 1)]
 
-namespace UITestsForRomanNumbersCalculator
+namespace UITestsForDeadlinesMonitoring
 {
     public class AvaloniaUiTestFramework : XunitTestFramework
     {

@@ -2,12 +2,12 @@
 using Avalonia.Threading;
 using Avalonia;
 using Avalonia.ReactiveUI;
-using RomanNumbersCalculator.Views;
-using RomanNumbersCalculator;
+using DeadlinesMonitoring.Views;
+using DeadlinesMonitoring;
 using Avalonia.Headless;
 using System.Reflection.PortableExecutable;
 
-namespace UITestsForRomanNumbersCalculator
+namespace UITestsForDeadlinesMonitoring
 {
     public static class AvaloniaApp
     {

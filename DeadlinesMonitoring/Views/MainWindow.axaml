@@ -54,12 +54,12 @@
 			<TextBox Name="socialScienceCS" Grid.Column="4" Text="{Binding SocialScienceCS}"/>
 		</Grid>
 		<Grid Grid.Row="4" ColumnDefinitions="*, *">
-			<Button Grid.Column="0" Content="Добавить" Command="{Binding AddStudent}"/>
-			<Button Grid.Column="1" Content="Удалить" Command="{Binding RemuveStudent}"/>
+			<Button Name="buttonAdd" Grid.Column="0" Content="Добавить" Command="{Binding AddStudent}"/>
+			<Button Name="buttonRem" Grid.Column="1" Content="Удалить" Command="{Binding RemuveStudent}"/>
 		</Grid>
 		<Grid Grid.Row="5" ColumnDefinitions="*, *">
-			<Button Grid.Column="0" Content="Сохранить" Command="{Binding SaveList}"/>
-			<Button Grid.Column="1" Content="Загрузить" Command="{Binding LoadList}"/>
+			<Button Name="buttonSave" Grid.Column="0" Content="Сохранить" Command="{Binding SaveList}"/>
+			<Button Name="buttonLoad" Grid.Column="1" Content="Загрузить" Command="{Binding LoadList}"/>
 		</Grid>
 	</Grid>
 

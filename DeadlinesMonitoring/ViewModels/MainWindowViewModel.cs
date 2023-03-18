@@ -268,10 +268,6 @@ namespace DeadlinesMonitoring.ViewModels
                         );
                     studentSave.Add(buff);
                 }
-
-                // XmlSerializer xmlSerializer = new XmlSerializer(typeof(MainWindowViewModel));
-                // StringWriter stringWriter = new StringWriter();
-                // xmlSerializer.Serialize(stringWriter, studentsList);
                 using (var file = new FileStream("list.bin", FileMode.OpenOrCreate))
                 {
                     binFormatter.Serialize(file, studentSave);
